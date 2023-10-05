@@ -2,7 +2,7 @@
 [RedMagic 6 Pro]
 | Device                  | RedMagic 6 Pro                                          |
 | ----------------------- | ---------------------------------------------------------|
-| SoC                     | Qualcomm SM8350 Snapdragon 8+ Gen 1 (5 nm)                      |      
+| SoC                     | Qualcomm SM8350 Snapdragon 888 (5 nm)                      |      
 | CPU                     | 1x2.84 GHz Cortex-X1 +3x2.42 GHz Cortex-A78 + 4x1.8 GHz Cortex-A55  |
 | GPU                     | Adreno 660                                             |
 | Internal                | 128GB 12GB RAM, 256GB 12GB RAM, 256GB 16GB RAM, 512GB 18GB RAM UFS 3.1                 |
