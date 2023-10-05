@@ -7,7 +7,7 @@
 | GPU                     | Adreno 660                                             |
 | Internal                | 128GB 12GB RAM, 256GB 12GB RAM, 256GB 16GB RAM, 512GB 18GB RAM UFS 3.1                 |
 | Model                   | NX669J |
-| Codename                | NX779J |
+| Codename                | NX669J |
 
 ## Device picture
 
