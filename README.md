@@ -11,7 +11,7 @@
 
 ## Device picture
 
-![NX669J](https://www.giztop.com/media/catalog/product/cache/dc206057cdd42d7e34b9d36e347785ca/r/e/red_magic_6_pro-2_1.png)
+![NX669J](https://1.bp.blogspot.com/-OkzxJDxfhd8/YEGnqWOLl3I/AAAAAAABjIE/I-IeiWffn6YSvcKQgucJJNVIfZpxp8K7wCLcBGAsYHQ/s800/red-magic-6-2.png)
 
 ### Release Notes
 * Orangefox/TWRP now boots, decryption is not working fine.
