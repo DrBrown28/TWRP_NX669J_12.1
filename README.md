@@ -24,13 +24,14 @@
 * FastbootD
 * ADB Commands and Terminal
 * Flashing .zip files.
-* Flashing Firmware (Need test)
+* Flashing Firmware (not working)
 * Flashing non-logical .img files.
 * ADB Sideload
 * MTP
 
 ### Issues and Bugs
-* Flashing OTA. (need test)
+* Flashing OTA.
+* Encryption
 
 ### Credits
 ```
