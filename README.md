@@ -11,7 +11,7 @@
 
 ## Device picture
 
-![NX669J](https://1.bp.blogspot.com/-OkzxJDxfhd8/YEGnqWOLl3I/AAAAAAABjIE/I-IeiWffn6YSvcKQgucJJNVIfZpxp8K7wCLcBGAsYHQ/s800/red-magic-6-2.png)
+![NX669J](https://i.ebayimg.com/images/g/CVAAAOSw9vdgUc0v/s-l1600.png)
 
 ### Release Notes
 * Orangefox/TWRP now boots, decryption is not working fine.
