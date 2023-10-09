@@ -11,7 +11,7 @@
 
 ## Device picture
 
-![NX669J](https://bludiode.com/es/otras-marcas/zte-nubia-red-magic-6-dual-sim-12gb-ram-128gb-5g-eclipse-negro-16103/)
+![NX669J](https://www.giztop.com/media/catalog/product/cache/dc206057cdd42d7e34b9d36e347785ca/r/e/red_magic_6_pro-2_1.png)
 
 ### Release Notes
 * Orangefox/TWRP now boots, decryption is not working fine.
