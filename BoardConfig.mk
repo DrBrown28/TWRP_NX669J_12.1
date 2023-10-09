@@ -45,6 +45,10 @@ OVERRIDE_TARGET_FLATTEN_APEX := true
 TARGET_BOOTLOADER_BOARD_NAME := lahaina
 TARGET_NO_BOOTLOADER := true
 
+# Init
+#TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_NX709S
+#TARGET_RECOVERY_DEVICE_MODULES := libinit_NX709S
+
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
@@ -84,7 +88,8 @@ TARGET_RECOVERY_DENSITY := xxhdpi
 NEED_KERNEL_MODULE_RECOVERY := true
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_METADATA_PARTITION := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+#TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
@@ -106,6 +111,7 @@ PLATFORM_VERSION := 16.1.0
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
+TW_USE_FSCRYPT_POLICY := 2
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -118,7 +124,7 @@ BOARD_USES_QCOM_FBE_DECRYPTION := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
-TARGET_RECOVERY_DEVICE_MODULES += libion libandroidicu vendor.display.config@1.0 vendor.display.config@2.0 libdisplayconfig.qti device_manifest.xml system_manifest.xml
+#TARGET_RECOVERY_DEVICE_MODULES += libion libandroidicu vendor.display.config@1.0 vendor.display.config@2.0 libdisplayconfig.qti device_manifest.xml system_manifest.xml
 
 # TWRP specific build flags
 TW_DEVICE_VERSION := Dr.Brown28
