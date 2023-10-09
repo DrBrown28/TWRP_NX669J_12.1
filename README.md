@@ -11,7 +11,7 @@
 
 ## Device picture
 
-![NX669J](https://i.ebayimg.com/images/g/CVAAAOSw9vdgUc0v/s-l1600.png)
+![NX669J](https://www.google.com/search?q=red+magic+6+pro+png&sca_esv=572049527&tbm=isch&prmd=isvn&source=lnms&sa=X&ved=2ahUKEwjSm6bckeqBAxXwtYQIHRwOBgUQ_AUoAXoECAQQAQ&biw=412&bih=712&dpr=2.63#imgrc=DVyZeXo52qo1tM)
 
 ### Release Notes
 * Orangefox/TWRP now boots, decryption is not working fine.
