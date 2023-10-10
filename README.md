@@ -11,7 +11,7 @@
 
 ## Device picture
 
-![NX669J] (https://www.gizmochina.com/wp-content/uploads/2021/03/Red-Magic-6-Featured.png)
+! [NX669J](https://www.gizmochina.com/wp-content/uploads/2021/03/Red-Magic-6-Featured.png)
 
 ### Release Notes
 * Orangefox/TWRP now boots, decryption is not working fine.
