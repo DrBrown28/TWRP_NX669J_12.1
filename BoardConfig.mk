@@ -122,7 +122,7 @@ BOARD_USES_QCOM_FBE_DECRYPTION := true
 
 # Extras
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+#TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 #TARGET_RECOVERY_DEVICE_MODULES += libion libandroidicu vendor.display.config@1.0 vendor.display.config@2.0 libdisplayconfig.qti device_manifest.xml system_manifest.xml
 
