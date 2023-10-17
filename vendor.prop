@@ -1,0 +1,6 @@
+
+# USB Config
+vendor.usb.use_ffs_mtp=1
+
+# Audio
+ro.config.vc_call_vol_steps=6
