@@ -1,6 +1,6 @@
 ## Custom Recovery | Device Tree
 [RedMagic 6 Pro]
-| Device                  | RedMagic 6 Pro                                          |
+| Device                  | RedMagic 6 Pro/6S Pro                                          |
 | ----------------------- | ---------------------------------------------------------|
 | SoC                     | Qualcomm SM8350 Snapdragon 888 (5 nm)                      |      
 | CPU                     | 1x2.84 GHz Cortex-X1 +3x2.42 GHz Cortex-A78 + 4x1.8 GHz Cortex-A55  |
@@ -11,7 +11,7 @@
 
 ## Device picture
 
-![NX669J](https://i.ebayimg.com/images/g/uo8AAOSwmndgeT~9/s-l1600.png)
+![NX669J](https://theme.zdassets.com/theme_assets/9346035/c63789e68d28f9b64190b088ff96724dd94dbe77.png)
 
 ### Release Notes
 * Orangefox/TWRP now boots, decryption is not working fine.
