@@ -1,0 +1,6 @@
+
+on property:dev.mnt.blk.firmware=*
+    write /sys/class/leds/vibrator/index 3
+
+on property:ro.twrp.fastbootd=1
+    write /sys/class/leds/vibrator/index 3
