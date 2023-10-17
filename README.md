@@ -11,7 +11,7 @@
 
 ## Device picture
 
-![NX669J](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ebay.co.uk%2Fitm%2F164817430578&psig=AOvVaw0cw69f6s065Pz3tLHYlyeh&ust=1697670555228000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCIjAxuqZ_oEDFQAAAAAdAAAAABAP)
+![NX669J](https://i.ebayimg.com/images/g/uo8AAOSwmndgeT~9/s-l1600.png)
 
 ### Release Notes
 * Orangefox/TWRP now boots, decryption is not working fine.
