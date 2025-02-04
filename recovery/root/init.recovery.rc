@@ -1,0 +1,39 @@
+on init
+    export PATH /sbin:/system/bin:/system/xbin
+    export LD_LIBRARY_PATH /sbin:/system/lib:/system/lib64
+    export ANDROID_ROOT /system
+    export ANDROID_DATA /data
+    export EXTERNAL_STORAGE /sdcard
+    export RECOVERY_STORAGE /sdcard
+    export TMPDIR /tmp
+    export BOOTCLASSPATH /system/framework/core-oj.jar:/system/framework/core-libart.jar:/system/framework/okhttp.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/ims-common.jar:/system/framework/apache-xml.jar:/system/framework/org.apache.http.legacy.boot.jar:/system/framework/services.jar:/system/framework/android.hidl.base-V1.0-java.jar:/system/framework/android.hidl.manager-V1.0-java.jar:/system/framework/android.test.runner.jar
+    start ueventd
+
+on early-init
+    setenforce 0
+
+on fs
+    mount_all /fstab.nubia
+
+on post-fs-data
+    mkdir /dev/graphics 0755 root root
+    chmod 0777 /dev/graphics
+    mkdir /cache/recovery 0770 system cache
+    mkdir /data/cache 0770 system cache
+    mkdir /data/cache/recovery 0770 system cache
+    mkdir /tmp 0777 root root
+    chmod 0777 /tmp
+    mkdir /twrp 0777 root root
+
+on boot
+    class_start default
+    start logd
+    start healthd
+    start adbd
+    write /sys/class/graphics/fb0/blank 0
+
+service adbd /sbin/adbd --root_seclabel=u:r:adbd:s0
+    class main
+    oneshot
+    disabled
+    seclabel u:r:adbd:s0
