@@ -11,6 +11,7 @@ on init
 
 on early-init
     setenforce 0
+    write /sys/fs/selinux/enforce 0
 
 on fs
     mount_all /fstab.nubia
@@ -24,6 +25,7 @@ on post-fs-data
     mkdir /tmp 0777 root root
     chmod 0777 /tmp
     mkdir /twrp 0777 root root
+    mkdir /fox 0777 root root
 
 on boot
     class_start default
@@ -32,6 +34,7 @@ on boot
     start adbd
     write /sys/class/graphics/fb0/blank 0
 
+# ADB service (TWRP & OrangeFox compatible)
 service adbd /sbin/adbd --root_seclabel=u:r:adbd:s0
     class main
     oneshot
