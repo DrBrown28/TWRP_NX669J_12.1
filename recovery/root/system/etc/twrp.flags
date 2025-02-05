@@ -1,28 +1,102 @@
-# mount point	fstype	device											device2				flags
-/boot			emmc	/dev/block/bootdevice/by-name/boot									flags=slotselect
-/vendor_boot	emmc	/dev/block/bootdevice/by-name/vendor_boot							flags=slotselect;display="Vendor Boot";backup=1;flashimg=1
+# twrp.flags for RedMagic 6S Pro with only boot partition
 
-# AVB partitions
-/dtbo			emmc	/dev/block/bootdevice/by-name/dtbo									flags=slotselect;display="DTBO";backup=1;flashimg=1
-/vbmeta			emmc	/dev/block/bootdevice/by-name/vbmeta								flags=slotselect;display="VBMeta";backup=1;flashimg=1
-/vbmeta_system	emmc	/dev/block/bootdevice/by-name/vbmeta_system							flags=slotselect;display="VBMeta System";backup=1;flashimg=1
+# Boot Partition Mount Point and File System
+/boot emmc /dev/block/bootdevice/by-name/boot
+flags=backup=1;display="Boot";flashing=1
 
-# Persistent Firmware & Properties
-/firmware		vfat	/dev/block/bootdevice/by-name/modem									flags=slotselect;display="Firmware";mounttodecrypt;fsflags="ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0"
-/persist		ext4	/dev/block/bootdevice/by-name/persist 								flags=display="Persist";fsflags=ro
-/persist_image	emmc	/dev/block/bootdevice/by-name/persist 								flags=display="Persist";backup=1
+# A Partition Mount Points and File Systems (if applicable)
+/system_a ext4 /dev/block/bootdevice/by-name/system_a
+/system_ext_a ext4 /dev/block/bootdevice/by-name/system_ext_a
+/product_a ext4 /dev/block/bootdevice/by-name/product_a
+/vendor_a ext4 /dev/block/bootdevice/by-name/vendor_a
+/data ext4 /dev/block/bootdevice/by-name/userdata flags=forceencrypt=footer;length=-16384
+/metadata ext4 /dev/block/bootdevice/by-name/metadata
+/cache ext4 /dev/block/bootdevice/by-name/cache
+/persist ext4 /dev/block/bootdevice/by-name/persist
+/firmware_a ext4 /dev/block/bootdevice/by-name/modem_a
+
+# Flags for A Partition (if applicable)
+flags=/system_a:backup=1
+flags=/system_ext_a:backup=1
+flags=/product_a:backup=1
+flags=/vendor_a:backup=1
+flags=/firmware_a:backup=1
+
+# Additional Partitions from recovery.fstab
+/dlibo emmc /dev/block/bootdevice/by-name/dlibo
+flags=display="DTDD";backup=1
+/ubuntu emmc /dev/block/bootdevice/by-name/ubuntu
+flags=display="WM64x";backup=1
+/ubuntu_system emmc /dev/block/bootdevice/by-name/ubuntu_system
+flags=display="WM64x System";backup=1
+
+# Persistent Firmware & Partitions
+/firmware vfat /dev/block/bootdevice/by-name/modem
+flags=display="Firmware";mounttodecrypt=1;fsflags="utf8";shortname=lower;uid=1000;gid=1000;dmask=227;fmask=337
+/persist ext4 /dev/block/bootdevice/by-name/persist
+flags=display="Persist";fsflags="ro"
+/persist_image emmc /dev/block/bootdevice/by-name/persist
+flags=display="Persist";backup=1
 
 # Modem partitions
-/modem			emmc	/dev/block/bootdevice/by-name/modem									flags=slotselect;backup=1;display="Modem"
-/bluetooth		emmc	/dev/block/bootdevice/by-name/bluetooth								flags=slotselect;backup=1;subpartitionof=/modem
-/dsp			emmc	/dev/block/bootdevice/by-name/dsp									flags=slotselect;backup=1;subpartitionof=/modem
+/modem emmc /dev/block/bootdevice/by-name/modem
+flags=slotselect;backup=1;display="Modem"
+/bluetooth emmc /dev/block/bootdevice/by-name/bluetooth
+flags=slotselect;backup=1;subpartitionof=/modem
+/dsp emmc /dev/block/bootdevice/by-name/dsp
+flags=slotselect;backup=1;subpartitionof=/modem
 
 # EFS partitions
-/efs1			emmc	/dev/block/bootdevice/by-name/modemst1								flags=backup=1;display="EFS"
-/efs2			emmc	/dev/block/bootdevice/by-name/modemst2								flags=backup=1;subpartitionof=/efs1
-/efsc			emmc	/dev/block/bootdevice/by-name/fsc									flags=backup=1;subpartitionof=/efs1
-/efsg			emmc	/dev/block/bootdevice/by-name/fsg									flags=backup=1;subpartitionof=/efs1
-/efsg_CA		emmc	/dev/block/bootdevice/by-name/fsgCA									flags=backup=1;subpartitionof=/efs1
+/efs1 emmc /dev/block/bootdevice/by-name/modemst1
+flags=backup=1;display="EFS"
+/efs2 emmc /dev/block/bootdevice/by-name/modemst2
+flags=backup=1;subpartitionof=/efs1
+/efsc emmc /dev/block/bootdevice/by-name/fsc
+flags=backup=1;subpartitionof=/efs1
+/efsg emmc /dev/block/bootdevice/by-name/fsg
+flags=backup=1;subpartitionof=/efs1
+/efsg_CA emmc /dev/block/bootdevice/by-name/fsgCA
+flags=backup=1;subpartitionof=/efs1
 
 # Removable storage
-/usbstorage		vfat	/dev/block/sdg1									/dev/block/sdg		flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable
+/usbstorage vfat /dev/block/sdg1
+flags=fsflags=utf8;display="USB Storage";storage;removable
+
+# Common Settings
+tw_signed_bootimage=1
+tw_use_fbui=1
+tw_use_key_code=1
+tw_use_key_pad=1
+tw_use_screen_timeout=1
+tw_use_system_properties=1
+
+# Custom theme and UI settings
+tw_custom_theme=1
+tw_theme_path=/sdcard/TWRP/theme/ui.zip
+
+# Backup and restore settings
+tw_backup_system=1
+tw_backup_data=1
+tw_backup_boot=1
+tw_backup_cache=0
+tw_backup_persist=1
+
+# Screen timeout and brightness settings
+tw_screen_timeout_secs=60
+tw_brightness=255
+
+# Logging and debugging settings
+tw_enable_logging=1
+tw_log_path=/sdcard/TWRP/logs
+
+# Advanced partition management
+tw_include_repartition=1
+tw_include_format_data=1
+
+# Security and permission settings
+tw_use_system_properties=1
+tw_use_system_ro_properties=1
+
+# Advanced flashing settings
+tw_use_compression=1
+tw_use_digest=1
